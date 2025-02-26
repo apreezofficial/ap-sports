@@ -1,0 +1,1088 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+body{
+  background: #0B132B; 
+    padding-top: 60px;
+  }
+  /* Preloader Styles */
+        #preloader {
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            background: #0b132b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+
+        .football {
+            width: 60px;
+            height: 60px;
+            background: url('https://upload.wikimedia.org/wikipedia/commons/e/ec/Soccer_ball.svg') no-repeat center center / cover;
+            position: relative;
+            animation: bounce .5s infinite ease-in-out;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-50px);
+            }
+        }
+
+        /* Hide content until loader disappears */
+        .content {
+            display: none;
+        }
+        
+/* Fixed Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(45deg, #1a1a2e, #16213e); /* Same gradient style */
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Ensures it's above everything */
+    
+}
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        .navbar-buttons .btn {
+            margin-left: 10px;
+        }
+        /* Ad Carousel Container */
+        .ad-container {
+            background: transparent; /* Light grey background */
+            padding: 5px;
+            text-align: center;
+        }
+
+        /* Responsive Ad Images */
+        .carousel-inner img {
+            width: 100%;
+            object-fit: cover;
+        }
+
+        /* Adjust height based on screen size */
+        @media (max-width: 576px) {  /* Small devices */
+            .carousel-inner img {
+                height: 50px;
+            }
+        }
+
+        @media (min-width: 577px) and (max-width: 992px) { /* Tablets */
+            .carousel-inner img {
+                height: 70px;
+            }
+        }
+
+        @media (min-width: 993px) { /* Large screens */
+            .carousel-inner img {
+                height: 100px;
+            }
+        }
+ /* Hot Match Header (OUTSIDE CONTAINER) */
+.match-header {
+    background: linear-gradient(to right, #9b1c31, #131e2d); /* Gradient like the image */
+    padding: 12px 20px;
+    border-radius: 30px;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    width: 90%;
+    text-align: center;
+    margin-left: 5%;
+}
+
+/* Hot Match Container */
+.hot-match-container {
+    padding: 12px 15px;
+    border-radius: 15px;
+    color: white;
+    text-align: left;
+    margin: 0 auto;
+    max-width: 900px;
+}
+
+/* Match Cards */
+.match-card {
+    background: #162447; /* Dark card background */
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 8px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* Match Info (League + Time) */
+.match-info {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 13px;
+    color: #B0B0B0;
+    padding-bottom: 5px;
+}
+
+/* Teams */
+.teams {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Team Names & Logos */
+.team {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Team Logos */
+.team img {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+/* VS Text */
+.vs {
+    color: #D3D3D3;
+    font-weight: bold;
+    word-spacing: 25px;
+}
+
+/* Responsive Design */
+@media (max-width: 576px) {
+    .hot-match-container {
+        max-width: 95%;
+    }
+    
+    .teams {
+        font-size: 14px;
+    }
+    
+    .team img {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+@media (min-width: 992px) {
+    .hot-match-container {
+        max-width: 950px;
+    }
+}
+/* Matches Wrapper */
+.m2-matches-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 20px 0;
+}
+
+/* Match Box - Styled Like Each Hot Matches Container */
+.m2-match-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(135deg, #1a1a2e, #16213e); /* Dark gradient like Hot Matches containers */
+    color: white;
+    padding: 15px;
+    width: 90%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 2px solid #0f3460;
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    margin-bottom: 15px; /* Adds spacing after each row */
+}
+
+/* Animation for newly loaded items */
+.m2-hidden-box {
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+/* Match Info */
+.m2-match-info {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ddd;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #ccc;
+}
+
+/* Teams Container */
+.m2-teams-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px 0;
+}
+
+/* Team Details */
+.m2-team-details {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+}
+
+/* Team Logos */
+.m2-team-details img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* VS Text */
+.m2-match-vs {
+    font-size: 18px;
+    font-weight: bold;
+    color: #D3D3D3;
+    text-transform: lowercase;
+    word-spacing: 25px;
+}
+
+/* Watch Button - Dark Blue Gradient */
+.m2-watch-now {
+    width: 100%;
+    padding: 10px;
+    background: linear-gradient(45deg, blue, darkblue); /* Dark Blue Gradient */
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    transition: background 0.3s ease;
+}
+
+.m2-watch-now:hover {
+    background: darkblue;
+}
+/* Center Load More Button */
+.m2-load-more {
+    display: block;
+    margin: 0 auto; /* Centers it horizontally */
+    padding: 10px 15px;
+    font-size: 14px;
+    font-weight: bold;
+    background: linear-gradient(45deg, blue, darkblue);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-align: center;
+}
+
+.m2-load-more:hover {
+    background: darkblue;
+}
+
+.m2-load-more:disabled {
+    background: gray;
+    cursor: not-allowed;
+}
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 70px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(45deg, blue, darkblue);
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none; /* Hidden by default */
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 1000;
+}
+
+/* Hover Effect */
+.back-to-top:hover {
+    background: darkblue;
+}
+
+/* Show Button When Scrolled Down */
+.back-to-top.show {
+    display: flex;
+    opacity: 1;
+    transform: scale(1);
+}
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #07141E; /* Dark background */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.nav-item {
+    text-align: center;
+    color: white;
+    font-size: 14px;
+}
+
+.nav-item i {
+    font-size: 24px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+ .activenv i {
+    color: red; /* Active icon color */
+}
+
+.activenv .text {
+    color: red; /* Active text color */
+}
+a{
+  text-decoration-line: none;
+  color: white;
+}
+.ap-sports {
+    padding: 50px 20px;
+}
+
+.logo {
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+}
+
+.ap {
+    color: #E31B5A; /* Red for AP */
+}
+
+.description {
+    font-size: 18px;
+    max-width: 600px;
+    margin: 20px auto;
+    line-height: 1.5;
+    color: white;
+}
+
+.leagues {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.leagues img {
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 50%;
+    padding: .2px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.leagues img:hover {
+    transform: scale(1.1);
+}
+/* Footer Styling */
+.ap-footer {
+    background: #0e0e0e;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 14px;
+}
+
+.ap-footer-links {
+    margin: 10px 0;
+}
+
+.ap-footer-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.ap-footer-links a:hover {
+    color: #E50914;
+}
+
+/* Chat Button */
+.ap-chat-button {
+    position: fixed;
+    bottom: 80px;
+    left: 20px;
+    background: #E50914;
+    color: white;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    font-size: 24px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 999999;
+}
+
+.ap-chat-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Chat Popup */
+.chat-popup {
+    position: fixed;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    background: #0e0e0e;
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 1000;
+}
+
+/* Mobile Fullscreen Chat */
+@media screen and (max-width: 768px) {
+    .chat-popup {
+        width: 100%;
+        height: 100%;
+        bottom: 0;
+        left: 0;
+        transform: none;
+        border-radius: 0;
+        z-index: 99999;
+    }
+
+    /* Prevent scrolling when chat is open */
+    body.no-scroll {
+        overflow: hidden;
+    }
+
+    /* Move the chat button to the top when open */
+    .ap-chat-button.open {
+        bottom: 20px;
+        top: auto;
+    }
+}
+
+/* Show popup */
+.chat-popup.active {
+    display: block;
+    opacity: 1;
+}
+
+/* Chat Header */
+.chat-header {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Chat Form */
+.chat-form label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.chat-form input, 
+.chat-form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background: #222;
+    color: white;
+}
+
+.chat-form button {
+    width: 100%;
+    padding: 8px;
+    background: #E50914;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.chat-form button:hover {
+    background: #d10812;
+}
+/* Loading Bar */
+.loading-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 5px;
+    background: linear-gradient(90deg, #ff4500, #ff0000);
+    transition: width 0.5s ease-in-out;
+    z-index: 9999;
+}
+
+/* Fade Out Effect */
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Pricing Section */
+.pricing-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.pricing-card {
+    background: linear-gradient(145deg, #1e1e1e, #111);
+    color: white;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    width: 280px;
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.pricing-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.best-value {
+    position: absolute;
+    top: 10px;
+    left: -10px;
+    background: #00AEEF;
+    color: white;
+    padding: 5px 15px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 5px;
+    transform: rotate(-10deg);
+}
+
+h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 28px;
+    font-weight: bold;
+    color: #ff4081;
+}
+
+.price s {
+    font-size: 14px;
+    opacity: 0.6;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.price-button {
+    background: #ff4081;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+    font-size: 16px;
+}
+
+.price-button:hover {
+    background: #ff2050;
+    transform: translateY(-2px);
+}
+
+/* Selected Plan */
+.selected-plan {
+    background: #00AEEF !important;
+    color: white;
+}
+
+.selected-plan .price-button {
+    background: #003f7f;
+}
+
+/* Payment Section */
+#payment-section {
+    background: #1b1b1b;
+    padding: 25px;
+    margin-top: 40px;
+    border-radius: 15px;
+    color: white;
+    max-width: 500px;
+    margin: auto;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.payment-options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.payment-method {
+    display: flex;
+    align-items: center;
+    background: #252525;
+    padding: 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    border: 1px solid transparent;
+}
+
+.payment-method input {
+    margin-right: 10px;
+}
+
+.payment-method:hover {
+    border: 1px solid #ff4081;
+}
+
+.icons img {
+    width: 35px;
+    margin-left: 5px;
+    transition: 0.3s;
+}
+
+.payment-method:hover .icons img {
+    transform: scale(1.1);
+}
+
+.payment-summary {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.confirmatory-message {
+    margin-top: 20px;
+    background: #252525;
+    color: white;
+    padding: 12px;
+    border-left: 5px solid #ff4081;
+    border-radius: 5px;
+}
+/* Enable Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Fade-in effect for pricing cards */
+.pricing-card {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.pricing-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Slide-in effect for the payment box */
+.payment-box {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.payment-box.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Scroll to Payment Box */
+.payment-box.active {
+    animation: highlight 1s ease-in-out;
+}
+
+@keyframes highlight {
+    0% {
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    }
+    100% {
+        box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+    }
+}
+.satch-header{
+  background: linear-gradient(to right, #9b1c31, #131e2d); /* Gradient like the image */
+    padding: 12px 20px;
+    border-radius: 30px;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    width: 90%;
+    margin-left: 5%;
+}
+.container {
+    text-align: center;
+}
+
+.terms {
+    font-size: 14px;
+    color: #bbb;
+    margin-bottom: 20px;
+}
+
+.link {
+    color: #ff3b80;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.pay-btn {
+    background: #ff3b80;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.pay-btn:hover {
+    background: #ff1e5e;
+}
+
+.package-box {
+    background: #161b29;
+    border-radius: 10px;
+    padding: 20px;
+    width: 350px;
+    margin-top: 20px;
+    box-shadow: 0 5px 15px rgba(255, 59, 128, 0.2);
+}
+
+.package-box h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.package-list {
+    list-style: none;
+    text-align: left;
+    padding: 0;
+}
+
+.package-list li {
+    background: #1d2234;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-size: 14px;
+}
+
+.package-list li .icon {
+    margin-right: 10px;
+    font-size: 18px;
+    color: #ff3b80;
+}
+.faq-container {
+    max-width: 500px;
+    text-align: center;
+    background: rgba(30, 38, 58, 0.9);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+}
+
+h2 {
+    font-size: 26px;
+    font-weight: 700;
+    color: #ff4b7b;
+    text-transform: uppercase;
+}
+
+.faq-description {
+    font-size: 16px;
+    color: #f5f5f5;
+    margin-bottom: 20px;
+}
+
+.faq-item {
+    background: rgba(40, 48, 70, 1);
+    border-radius: 8px;
+    margin-bottom: 12px;
+    padding: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 75, 123, 0.6);
+}
+
+.faq-item:hover {
+    background: rgba(255, 75, 123, 0.2);
+    transform: scale(1.03);
+}
+
+.faq-question {
+    font-size: 18px;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.3s;
+    color: #ffffff;
+}
+
+.arrow {
+    font-size: 20px;
+    color: #ff4b7b;
+    transition: transform 0.3s ease-in-out;
+}
+
+.faq-answer {
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+    display: none;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 2px solid rgba(255, 75, 123, 0.7);
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.faq-item.active .faq-answer {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.faq-item.active .arrow {
+    transform: rotate(180deg);
+}
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    background: #0d0d0d;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.contact-section {
+    padding: 50px 20px;
+}
+
+.contact-title {
+    font-size: 18px;
+    color: #b97cff;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+}
+
+.main-heading {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.main-heading span {
+    color: #ff4d79;
+}
+
+.contact-description {
+    font-size: 16px;
+    color: #ccc;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.contact-box, .social-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 400px;
+}
+
+.contact-label, .social-label {
+    font-size: 14px;
+    color: #ffcc00;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.contact-email {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ff4d79;
+    text-decoration: none;
+    margin-top: 5px;
+}
+
+.contact-email:hover {
+    text-decoration: underline;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 50%;
+    color: #fff;
+    transition: 0.3s;
+}
+
+.facebook { background: #4267B2; }
+.telegram { background: #0088cc; }
+.youtube { background: #FF0000; }
+
+.icon:hover {
+    opacity: 0.8;
+}
+.contact-form-section {
+    background: #121212;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
+    text-align: center;
+}
+
+.form-title {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.form-description {
+    font-size: 14px;
+    margin-bottom: 15px;
+    opacity: 0.8;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label {
+    text-align: left;
+    font-weight: 600;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    background: #1c1c1c;
+    border: 1px solid #ff3377;
+    color: white;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+textarea {
+    resize: none;
+}
+
+.send-btn {
+    background: transparent;
+    border: 2px solid #ff3377;
+    color: #ff3377;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.send-btn:hover {
+    background: #ff3377;
+    color: white;
+}
