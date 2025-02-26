@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Apcodesphere ">
+    <meta name="author" content="APCodeSphere">
+    <meta name="keywords" content="Apcodesphere ">
+    
+    <title>Apcodesphere Pricing</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>  <!-- Custom Loading Bar -->
+    <div class="loading-bar" id="loadingBar"></div>
+
+<nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <!-- Logo (Text) -->
+            <a class="navbar-brand" href="#">ApBall</a>
+
+            <!-- Navbar Buttons -->
+            <div class="navbar-buttons">
+                <a href="#" class="btn btn-outline-light">Login</a>
+                <a href="#" class="btn btn-success">Sign Up</a>
+            </div>
+        </div>
+    </nav>
+   <div class="ad-container">
+        <div id="adCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+  <img src="assets/images/ads/1.jpg" class="d-block w-100" alt="Ad 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/images/ads/1.jpg" class="d-block w-100" alt="Ad 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/images/ads/1.jpg" class="d-block w-100" alt="Ad 3">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Pricing Section -->
+    <section id="pricing">
+      <h2 class="match-header">Our Packages</h2>
+      <p class="text-white text-center">Find the Perfect Plan for You</p>
+    
+      <div class="pricing-container">
+        <!-- 12 Month Plan -->
+        <div class="pricing-card">
+          <span class="best-value">Best Value</span>
+          <h3>12 Month</h3>
+          <p class="price"><s>$240</s> <strong>$72</strong></p>
+          <p>70% off. Get uninterrupted streaming for 12 months.</p>
+          <button class="price-button" data-months="12" data-price="240" data-discount="70">Buy now</button>
+        </div>
+    
+        <!-- 1 Month Plan -->
+        <div class="pricing-card">
+          <h3>1 Month</h3>
+          <p class="price"><s>$20</s> <strong>$15</strong></p>
+          <p>25% off. Get uninterrupted streaming for one month.</p>
+          <button class="price-button" data-months="1" data-price="20" data-discount="25">Buy now</button>
+        </div>
+    
+        <!-- 3 Month Plan -->
+        <div class="pricing-card">
+          <h3>3 Month</h3>
+          <p class="price"><s>$60</s> <strong>$42</strong></p>
+          <p>30% off. Get uninterrupted streaming for three months.</p>
+          <button class="price-button" data-months="3" data-price="60" data-discount="30">Buy now</button>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Payment Section -->
+    <section id="payment-section">
+      <h2>Choose Your Payment Method</h2>
+    
+      <div class="payment-options">
+        <label class="payment-method" onclick="card()">
+          <input type="radio" name="payment-method" value="card" checked>
+          <span class="method-name">Card</span>
+          <span class="icons">
+            <img src="assets/images/payments/vis.jpg" alt="Visa">
+            <img src="assets/images/payments/mas.jpg" alt="MasterCard">
+            <img src="assets/images/payments/mae.jpg" alt="Maestro">
+            <img src="assets/images/payments/din.jpg" alt="Diners Club">
+          </span>
+        </label>
+    
+        <label class="payment-method" onclick="crypto()">
+          <input type="radio" name="payment-method" value="crypto">
+          <span class="method-name">Crypto</span>
+          <span class="icons">
+            <img src="assets/images/payments/bit.jpg" alt="Bitcoin">
+            <img src="assets/images/payments/bin.jpg" alt="Binance">
+            <img src="assets/images/payments/ete.jpg" alt="Ethereum">
+            <img src="assets/images/payments/tet.jpg" alt="Tether">
+          </span>
+        </label>
+      </div>
+    
+      <div class="payment-summary satch-header" >
+        <p id="plan-details">Select a plan</p>
+        <p>Discount: <span id="discount">-$0</span></p>
+        <p><strong>Grand Total: <span id="total-price">$0</span></strong></p>
+      </div>
+      <div class="confirmatory-message" id="paymsg">
+Your account will be automatically updated within a minute or so once you pay. If it doesn't, contact support@apsports.com.
+    </div>
+    
+    </section>
+    
+    <div class="container">
+        <p class="terms">
+            By proceeding you are agreed to our 
+            <span class="link">Terms & Conditions</span> and 
+            <span class="link">Privacy Policy</span>.
+        </p>
+
+        <button class="pay-btn">Pay Now</button>
+
+        <div class="package-box">
+            <h2 class="match-header text-center">Package Details</h2>
+            <ul class="package-list">
+                <li><span class="icon">⚽</span> 100+ football leagues and tournaments</li>
+                <li><span class="icon">📺</span> English commentary</li>
+                <li><span class="icon">📰</span> No ads/popups</li>
+                <li><span class="icon">🔑</span> 256-bit encrypted</li>
+                <li><span class="icon">🎧</span> 24/7 dedicated support</li>
+                <li><span class="icon">🔒</span> 100% Safe and secure</li>
+                <li><span class="icon">📱</span> Watch on your laptop, phone, or tablet</li>
+                <li><span class="icon">💲</span> Discreet billing</li>
+                <li><span class="icon">📺</span> Device limit 2</li>
+            </ul>
+        </div>
+    </div>
+     <div class="faq-container">
+        <h2>Frequently Asked Questions</h2>
+        <p class="faq-description">
+            If you’re curious about our plans, features, or benefits, this section will help you find what you’re looking for.
+        </p>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                What Payment Methods we accepted? <span class="arrow">↓</span>
+            </div>
+            <div class="faq-answer">
+                We accept credit/debit cards, PayPal, and cryptocurrency.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                How can I make a payment? <span class="arrow">↓</span>
+            </div>
+            <div class="faq-answer">
+                You can make a payment through our secure payment gateway available on the checkout page.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                Why isn’t my subscription activated yet? <span class="arrow">↓</span>
+            </div>
+            <div class="faq-answer">
+                Subscriptions may take up to 24 hours to activate. If the delay persists, contact support.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                How do I remove pop-ups from the player? <span class="arrow">↓</span>
+            </div>
+            <div class="faq-answer">
+                Ensure you have an active subscription, and disable third-party extensions that might interfere.
+            </div>
+        </div>
+    </div>
+
+       <section class="ap-sports">
+        <h1 class="logo"><span class="ap">AP</span> SPORTS</h1>
+        <p class="description">
+            Dive into the thrilling world of live sports with <b>AP Sports!</b> Enjoy HD football streams, 
+            stay updated with fixtures and explore 100+ leagues. Every match is a unique experience. 
+            Join us for an unmatched sports journey!
+        </p>
+
+        <div class="leagues">
+            <img src="assets/images/leagues/cha.png" alt="Champions League">
+            <img src="assets/images/leagues/eur.png" alt="Europa League">
+            <img src="assets/images/leagues/pre.png" alt="Premier League">
+            <img src="assets/images/leagues/lal.png" alt="La Liga">
+            <img src="assets/images/leagues/bun.png" alt="Bundesliga">
+            <img src="assets/images/leagues/ser.png" alt="Serie A">
+            <img src="assets/images/leagues/lig.png" alt="Ligue 1">
+            <img src="assets/images/leagues/ere.png" alt="Eredivisie">
+            <img src="assets/images/leagues/fac.png" alt="FA Cup">
+        </div>
+    </section>
+
+    
+    <div class="bottom-nav">
+      <div class="nav-item">
+        <a href="index.html" class="transition-link">
+        <i class="fas fa-futbol"></i>
+        <span class="text">HOME</span></a>
+      </div>
+      <div class="nav-item activenv">
+        <a href="pricing.html" class="transition-link">
+        <i class="fas fa-dollar-sign"></i>
+        <span class="text">PRICING</span></a>
+      </div>
+      <div class="nav-item">
+        <a href="contact.html" class="transition-link">
+        <i class="fas fa-calendar-alt"></i>
+        <span class="text">CONTACT</span></a>
+      </div>
+    </div>
+    <!-- Footer Section -->
+    <footer class="ap-footer">
+        <p>Email: <strong>support@apcodesphere.com</strong></p>
+        <nav class="ap-footer-links">
+            <a href="index.html">Home</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="contact.html">Contact</a>
+            <a href="terms.html">Terms & Conditions</a>
+            <a href="privacy.html">Privacy Policy</a>
+        </nav>
+        <p>&copy; 2025 APCodeSphere. All Rights Reserved.</p>
+    </footer>
+<!-- Chat Button -->
+<div class="ap-chat-button" id="chatButton">&#128172;</div> <!-- Unicode for 💬 -->
+
+<!-- Chat Popup -->
+<div class="chat-popup" id="chatPopup">
+    <div class="chat-header">
+        <span>Chat with Us</span>
+    </div>
+    <form class="chat-form">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" placeholder="Enter your name" required>
+
+        <label for="message">Your Message</label>
+        <textarea id="message" placeholder="Type your message..." required></textarea>
+
+        <button type="submit">Send</button>
+    </form>
+</div>
+    <!-- Chat Button -->
+    <button id="backToTop" class="back-to-top">&#x25B2;</button>
+</div>
+
+    <!-- Custom JavaScript -->
+    <script src="assets/js/script.js"></script>
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+      <script src="assets/js/backup.js"></script>
+            <script src="assets/js/pricing.js"></script>
+</body>
+</html>
